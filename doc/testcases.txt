@@ -1,0 +1,21 @@
+Register
+	Case 1: Empty Data
+	Case 2: Incomplete Data
+	Case 3: Duplicate Email
+	Case 4: Password criteria does not matched
+	Case 5: Valid Data
+
+Login
+	Case 1: Empty Data
+	Case 2: Validate Input
+	Case 3: Email Exists
+	Case 4: Email Does not Exists
+	Case 5: Credentials Does not matched
+	Case 6: Credendtials matched
+
+Forget Password :
+	Case 1: Invalid input
+	Case 2: Email does'nt match
+	Case 3: Email match
+
+Profile Update :

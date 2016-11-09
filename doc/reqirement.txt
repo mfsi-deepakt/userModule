@@ -1,0 +1,213 @@
+------------------------------Roles--------------------------------------------
+----------------------------------------------------------------------------------
+
+Roles:
+	Admin
+	User
+
+
+What user can do:
+	--Login/Logout
+	--Signup
+	--View Profile
+	--Edit Profile
+	--Change Password
+	--Forget Password
+
+What Admin can do
+	--CRUD
+	--Login
+
+
+------------------------------Html Pages--------------------------------------------
+----------------------------------------------------------------------------------
+
+Different Interface/Html Pages:
+	--Login Form(fields:- Username/Email,password)   //form
+	--Signup Form(fields:-Firstname,Lastname,Email,dob,password,cpassword)  //form
+	--Forget Password Form(email to which new password to send.)   //form
+	--DashBoard
+	--Profile page(Fields:-Firstname, Lastname,dob, Skills,Projects,Education,Work/Experience,Contact(Email,phone,City),Interest/Hobbies, )
+	--Edit Profile Page(all the education page,personal info)
+	--Change Password Page within profile.(old password,,new password)
+
+
+------------------------------workflow--------------------------------------------
+----------------------------------------------------------------------------------
+
+1).Login WorkFlow:-
+   User Enter the Username/Email and password . in this case three cases will happen:-
+   		-- User is registered and verified this will be further divided as 
+   			1) First time login
+   			2) Not a First Time Login	
+   		
+   		-- User is Registered and not Verified.In this case an Error Message will be displayed that user is already registered and user need to verify its account using link
+
+
+   		-- User Does not Exist.
+
+ 2)Logout WorkFlow:-
+ 	User Logout the account.
+
+
+ 3)Register
+ 	Firstname
+
+
+ 4)Profile
+ 		--User Enter the detail for the first time then it will be taken to profile page
+ 		--User Enter the edit profile page from dashboard then it will go to profile page
+
+
+5)Forget Password
+		--User Will be asked to enter his/her registered email then we will send a verifiaction mail on the registered 	mail. when user clicks on that mail a new password is mailed to the user instantly.user can log in now 	
+		  using this password and can change password after login.
+		--User enter the mail which does  not exist then an error message will be displayed on the same page.
+
+
+6)Change Password
+		--This option is only available after the user has successful login.
+		--This require user to enter the previous password and new password along with confirm password
+		Multiple scenoraio included will be:
+			1)password and confirm password do not match(checked at client site)
+			2)Incorrect old password.
+
+
+7)Crud By Admin
+		--User can do CRUD operation on exitsing user and new user.
+
+8)Login/Logout Byt Admin
+
+
+
+------------------------------Database--------------------------------------------
+----------------------------------------------------------------------------------
+
+
+Tables:
+	--TempUser
+		id(auto_increment,required,primary key)
+		email(required,unique,only set once)
+		password
+
+	--User
+		id(auto_increment,required,primary key)
+		email(required,unique,only set once)
+		password
+		type(user/Admin)(enum)
+
+	Profile
+		id(auto_increment,required,primary key)
+		firstname(required)
+		lastname
+		email(required,unique,only set once)
+		dob
+		city
+		contact no.
+		user_id(foreign key to user)
+
+
+
+	Education
+		id
+		name of education(xth,XIIth,Bachelors)
+		percentage
+		passing year
+		profile_id(fk to profile)
+
+	Skills
+		id
+		name
+
+	Profile_skills -----many to many realtionship  ---pivot table
+		skill_id
+		profile_id
+		level(beginner ,intermediate,expert)
+
+	Hobbies/Interest
+		id
+		name
+		profile_id
+
+	Project
+		id
+		name
+		url
+		profile_id
+
+	WorkExperience
+		id
+		name of company
+		*year/month
+		designation
+		profile_id
+
+
+
+------------------------------Classes/Function/Input/Output--------------------------------------------
+----------------------------------------------------------------------------------
+
+	Functions :
+1)	loginUser()
+	Method : POST
+		input
+			username,password
+
+		output
+			1)succsessful
+						or
+			2)reponse saying please verify your email
+						or
+			3)resposne saying wrong username or password
+	Method : GET
+		Return login.html
+
+2) signUp
+	Method type :POST
+		input
+			form data
+
+		output
+			this email is already registered
+						or 
+			Successfullly Registered
+	Method type :GET		
+		return signup.html
+
+3) profile
+	GET
+		Return the  profile of user along with rendered data.
+	
+	POST
+		input 
+			form data
+		output
+			data saved
+
+4) change_password
+	POST
+		input
+			old password,new password,cpassword
+		output
+			either old password doesn't match
+						or
+			password successfully set
+
+	GET
+		return change_password.html	
+
+5) forgot_passsword
+	POST
+		input
+			email
+		output
+			mail not registered
+					or
+			mail successfully sent
+	GET
+		return forgot password
+
+6) logout
+	GET
+		user logout
+		return Index.html

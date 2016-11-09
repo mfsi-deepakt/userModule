@@ -1,0 +1,256 @@
+/* reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+nav ul,
+nav li,
+fieldset,
+form,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* start editing from here */
+
+a {
+    text-decoration: none;
+}
+.txt-rt {
+    text-align: right;
+}
+/* text align right */
+
+.txt-lt {
+    text-align: left;
+}
+/* text align left */
+
+.txt-center {
+    text-align: center;
+}
+/* text align center */
+
+.float-rt {
+    float: right;
+}
+/* float right */
+
+.float-lt {
+    float: left;
+}
+/* float left */
+
+.clear {
+    clear: both;
+}
+/* clear float */
+
+.pos-relative {
+    position: relative;
+}
+/* Position Relative */
+
+.pos-absolute {
+    position: absolute;
+}
+/* Position Absolute */
+
+.vertical-base {
+    vertical-align: baseline;
+}
+/* vertical align baseline */
+
+.vertical-top {
+    vertical-align: top;
+}
+/* vertical align top */
+
+nav.vertical ul li {
+    display: block;
+}
+/* vertical menu */
+
+nav.horizontal ul li {
+    display: inline-block;
+}
+/* horizontal menu */
+
+img {
+    max-width: 100%;
+}
+/*end reset*/
+
+#info {
+    color: #b3ff99;
+    font-style: initial;
+}
+#error {
+    color: red;
+    font-style: oblique;
+}
+label {
+    font-size: 15px;
+    color: white;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: url('../images/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    padding: 50px 0;
+}
+.content h1 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: 'Questrial', sans-serif;
+    text-transform: capitalize;
+}
+.main {
+    width: 32%;
+    margin: 45px auto;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 30px 30px;
+}
+.im-g {
+    text-align: center;
+    margin-bottom: 2em;
+}
+.im-g img {
+    border-radius: 50%;
+}
+input[type='date'],
+input[type='file'] {
+    padding-bottom: 18px;
+    width: 100%;
+}
